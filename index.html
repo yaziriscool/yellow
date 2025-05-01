@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#FFD700">
+    <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAADPUlEQVR4nO2ZTWhcVRTH/+e+SSaZZJJMmjR2pLXWWsFWbBehQqEtFqEIgpS6EQRdiAsXFRFc6MaFK0GtFAQXrkQQXOlCFFy40I0IFRGLtiItprXNR0dJJjNv5t3rYhJr0iYz8+67TcG5q8v9+J3/Offe+y6QkJCQkJBw8yJxi9jRaNSbpVKXqcgDMAZUKESIiKoiBOZcwNm+XP7MWBY2boaYAaoHp6fTtcDf5wrxKhGt2OeqEFU9m/a8Qwfyhe/i4oj1gg/X62OO6FuAPlcVTKlC4gAHQGaRz1MENBAiXWyJ+36pWPg1Do5YLvjQlcsdpupbAJs6F1dV0QOiCQB88w4OwJ8A7Ac5DwE8AuLMchlFcYSZ99bb7Uf3VSrNbjliF3iwVptuiHxKwJPXcQkADxOR2t7o2lzveD5fEO1Z1oiIMDOnALw8MDi4m5lfA9C9XMZQdJuIzAcnx8d7u8nRdQvtra3tUZEPmfmB5V5WVSWipxfTWDXDRJQBkBYRt9Tni+xnZnf0z9mZKgR5AKdAuj9u4G+rB1+an5+/xIxCm0tpZnyiqp8y42HilauxqmOt1uZQr3cYwDOXbUwIReXMeMb1h0lbwS/W6zTbmLnXZGeiWx+qVH6IyFy5tHxw7uHhOyLFdOQrCrWr8RCaYaZnqcMPmVhOoL+/LxMRTCk2CWZKKbX/AqW/W0QmJyZmZMnmJQAvuEr/AXL5l0nZ/6UXfqTRuC2M4stEWIrbH3y6K5t5+/j163Zk8fE/PDbWW1vI/ATg3vgJBAC+AssPP12pNIxEr/Pz3j0TQHRIgAOdnDGbBPgJRPZ/MTkZGFsAAPYMDGzyfP8ogM0r87AhBoDPKHS+OTkz853pr7FVAQBwz8hIb3/K+xrAXdG8FD0fqqo+Vw79d4+1Wy2rEy9aBQDAvtHRdCZ0DjPwSLQdoVtU5YSoPP3V1NRFFKGIowQAwNjg4BY38N8hxvbVRAB8J+QcPDY19Y2iiHmGFAkAAO6r1XKzdfsQmJ9crAIALn8OoYjuPTo9fdIVmSOKAkuOJXuGhrbZpn2QHHqYwZsAfK+kJ1zPPn5iZmaWEhISEhISbm7+BSL4L0TuVXZ3AAAAAElFTkSuQmCC">
     <title>YLM Movement Club</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
@@ -316,28 +318,69 @@
             transform: scale(1.05);
         }
         
-        /* Adding animated highlight for important elements */
-        .highlight {
-            position: relative;
-            display: inline-block;
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 42px;
+            }
+            
+            .nav-buttons {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            
+            .nav-button {
+                padding: 12px 20px;
+                font-size: 16px;
+                flex: 1;
+                min-width: 120px;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .feature-card {
+                min-width: 100%;
+                margin-bottom: 20px;
+            }
+            
+            .featured-content {
+                gap: 20px;
+            }
         }
         
-        .highlight::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background-color: #FFD700;
-            transform: scaleX(0);
-            transform-origin: bottom right;
-            transition: transform 0.5s ease;
-        }
-        
-        .highlight:hover::after {
-            transform-origin: bottom left;
-            transform: scaleX(1);
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 36px;
+            }
+            
+            header p {
+                font-size: 16px;
+            }
+            
+            .content {
+                padding: 25px 15px;
+                margin-top: 40px;
+            }
+            
+            .nav-button {
+                padding: 10px 15px;
+                font-size: 14px;
+                min-width: 100px;
+            }
+            
+            .icon {
+                font-size: 40px;
+            }
+            
+            .feature-card h3 {
+                font-size: 20px;
+            }
+            
+            .feature-card p {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -418,12 +461,59 @@
                 // We're using real links now, so no need for the alert
                 // The actual navigation will happen naturally through the href attribute
             });
+            
+            // Add touch-specific feedback
+            button.addEventListener('touchstart', function() {
+                this.style.backgroundColor = '#e6c200';
+                this.style.transform = 'scale(0.98)';
+            });
+            
+            button.addEventListener('touchend', function() {
+                this.style.backgroundColor = '#FFD700';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 200);
+            });
+        });
+        
+        // Add hover effect to all interactive elements (but with touch detection)
+        document.querySelectorAll('.interactive-element').forEach(element => {
+            // Detect if device supports hover
+            const supportsHover = window.matchMedia('(hover: hover)').matches;
+            
+            if (supportsHover) {
+                element.addEventListener('mouseover', function() {
+                    this.style.transform = 'scale(1.05)';
+                });
+                
+                element.addEventListener('mouseout', function() {
+                    this.style.transform = '';
+                });
+            } else {
+                // For touch devices, use touch events instead
+                element.addEventListener('touchstart', function() {
+                    this.style.transform = 'scale(1.02)';
+                });
+                
+                element.addEventListener('touchend', function() {
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 200);
+                });
+            }
         });
         
         // Add some random floating elements for more animation
         function createFloatingElements() {
+            // Check if device is low-powered (most mobile devices)
+            const isLowPower = window.matchMedia('(prefers-reduced-motion)').matches || 
+                              window.innerWidth < 768;
+            
+            // Reduce number of animations on mobile
+            const numElements = isLowPower ? 5 : 10;
+            
             const container = document.querySelector('.container');
-            for (let i = 0; i < 10; i++) {
+            for (let i = 0; i < numElements; i++) {
                 const floater = document.createElement('div');
                 floater.style.position = 'absolute';
                 floater.style.width = Math.random() * 10 + 5 + 'px';
@@ -434,10 +524,10 @@
                 floater.style.left = Math.random() * 100 + 'vw';
                 floater.style.zIndex = '-1';
                 
-                // Create unique animation
-                const duration = Math.random() * 20 + 10;
-                const floatY = Math.random() * 100 - 50;
-                const floatX = Math.random() * 100 - 50;
+                // Create unique animation (slower on mobile)
+                const duration = Math.random() * 20 + (isLowPower ? 15 : 10);
+                const floatY = Math.random() * (isLowPower ? 50 : 100) - (isLowPower ? 25 : 50);
+                const floatX = Math.random() * (isLowPower ? 50 : 100) - (isLowPower ? 25 : 50);
                 
                 floater.style.animation = `float ${duration}s infinite ease-in-out`;
                 
@@ -448,13 +538,13 @@
                         transform: translate(0, 0) rotate(0deg);
                     }
                     25% {
-                        transform: translate(${floatX}px, ${floatY}px) rotate(90deg);
+                        transform: translate(${floatX}px, ${floatY}px) rotate(${isLowPower ? '45' : '90'}deg);
                     }
                     50% {
-                        transform: translate(${-floatX}px, ${-floatY}px) rotate(180deg);
+                        transform: translate(${-floatX}px, ${-floatY}px) rotate(${isLowPower ? '90' : '180'}deg);
                     }
                     75% {
-                        transform: translate(${-floatX * 0.5}px, ${floatY * 0.5}px) rotate(270deg);
+                        transform: translate(${-floatX * 0.5}px, ${floatY * 0.5}px) rotate(${isLowPower ? '45' : '270'}deg);
                     }
                 }`;
                 
@@ -469,15 +559,21 @@
         // Call the function to create random floating elements
         createFloatingElements();
         
-        // Add hover effect to all interactive elements
-        document.querySelectorAll('.interactive-element').forEach(element => {
-            element.addEventListener('mouseover', function() {
-                this.style.transform = 'scale(1.05)';
-            });
-            
-            element.addEventListener('mouseout', function() {
-                this.style.transform = '';
-            });
+        // Add fast click for mobile devices to eliminate 300ms delay
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if it's a touch device
+            if ('ontouchstart' in window) {
+                document.documentElement.classList.add('touch-device');
+                
+                // Add viewport height fix for mobile browsers
+                function setVH() {
+                    let vh = window.innerHeight * 0.01;
+                    document.documentElement.style.setProperty('--vh', `${vh}px`);
+                }
+                
+                setVH();
+                window.addEventListener('resize', setVH);
+            }
         });
     </script>
 </body>
