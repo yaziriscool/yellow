@@ -295,11 +295,73 @@
             }
         }
         
-        footer {
-            text-align: center;
-            margin-top: 100px;
-            padding: 20px;
-            color: #AAA;
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 42px;
+            }
+            
+            .nav-buttons {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            
+            .nav-button {
+                padding: 12px 20px;
+                font-size: 16px;
+                flex: 1;
+                min-width: 120px;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .about-title {
+                font-size: 30px;
+            }
+            
+            .story-container {
+                padding: 25px 20px;
+            }
+            
+            .animated-letter {
+                animation: none;
+                display: inline;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 36px;
+            }
+            
+            header p {
+                font-size: 16px;
+            }
+            
+            .content {
+                padding: 25px 15px;
+                margin-top: 40px;
+            }
+            
+            .nav-button {
+                padding: 10px 15px;
+                font-size: 14px;
+                min-width: 100px;
+            }
+            
+            .about-title {
+                font-size: 26px;
+            }
+            
+            .story-container {
+                padding: 20px 15px;
+            }
+            
+            .story-container p {
+                font-size: 15px;
+            }
         }
         
         /* Create bubbles with different sizes and delays */
