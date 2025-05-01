@@ -514,14 +514,91 @@
             transform: scale(1.05);
         }
 
-        @keyframes gentle-float {
-            0%, 100% {
-                transform: translateY(0);
-                box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 42px;
             }
-            50% {
-                transform: translateY(-15px);
-                box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+            
+            .nav-buttons {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            
+            .nav-button {
+                padding: 12px 20px;
+                font-size: 16px;
+                flex: 1;
+                min-width: 120px;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .partners-title {
+                font-size: 30px;
+            }
+            
+            .partner-card {
+                padding: 20px;
+            }
+            
+            .discord-button {
+                font-size: 20px;
+                padding: 15px 30px;
+            }
+            
+            .animated-letter {
+                animation: none;
+                display: inline;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 36px;
+            }
+            
+            header p {
+                font-size: 16px;
+            }
+            
+            .content {
+                padding: 25px 15px;
+                margin-top: 40px;
+            }
+            
+            .nav-button {
+                padding: 10px 15px;
+                font-size: 14px;
+                min-width: 100px;
+            }
+            
+            .partners-title {
+                font-size: 26px;
+            }
+            
+            .partner-card {
+                padding: 20px 15px;
+            }
+            
+            .partner-card h3 {
+                font-size: 22px;
+            }
+            
+            .partner-card p {
+                font-size: 14px;
+            }
+            
+            .discord-button {
+                font-size: 16px;
+                padding: 12px 20px;
+                margin: 30px auto;
+            }
+            
+            .partner-image {
+                max-width: 100%;
             }
         }
     </style>
