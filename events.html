@@ -462,11 +462,157 @@
             }
         }
         
-        footer {
-            text-align: center;
-            margin-top: 100px;
-            padding: 20px;
-            color: #AAA;
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 42px;
+            }
+            
+            .nav-buttons {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            
+            .nav-button {
+                padding: 12px 20px;
+                font-size: 16px;
+                flex: 1;
+                min-width: 120px;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .events-title {
+                font-size: 30px;
+            }
+            
+            .event-card {
+                padding: 30px 20px;
+            }
+            
+            .gathering-info {
+                font-size: 24px;
+            }
+            
+            .animated-letter {
+                animation: none;
+                display: inline;
+            }
+            
+            .timezone-container {
+                gap: 20px;
+            }
+            
+            .timezone-card {
+                min-width: 160px;
+            }
+            
+            .countdown-timer {
+                gap: 10px;
+                font-size: 26px;
+            }
+            
+            .countdown-number {
+                min-width: 60px;
+                padding: 8px 12px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 36px;
+            }
+            
+            header p {
+                font-size: 16px;
+            }
+            
+            .content {
+                padding: 25px 15px;
+                margin-top: 40px;
+            }
+            
+            .nav-button {
+                padding: 10px 15px;
+                font-size: 14px;
+                min-width: 100px;
+            }
+            
+            .events-title {
+                font-size: 26px;
+            }
+            
+            .event-card {
+                padding: 25px 15px;
+            }
+            
+            .gathering-info {
+                font-size: 20px;
+                line-height: 1.6;
+            }
+            
+            .timezone-container {
+                gap: 15px;
+            }
+            
+            .timezone-card {
+                min-width: 140px;
+                padding: 15px 20px;
+            }
+            
+            .timezone-name {
+                font-size: 18px;
+            }
+            
+            .timezone-time {
+                font-size: 20px;
+            }
+            
+            .calendar-icon {
+                font-size: 50px;
+            }
+            
+            .countdown-title {
+                font-size: 20px;
+            }
+            
+            .countdown-timer {
+                gap: 8px;
+                font-size: 22px;
+            }
+            
+            .countdown-number {
+                min-width: 45px;
+                padding: 8px;
+            }
+            
+            .countdown-label {
+                font-size: 12px;
+            }
+        }
+        
+        /* For Extra Small Screens */
+        @media (max-width: 360px) {
+            .countdown-timer {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .countdown-segment {
+                margin-bottom: 10px;
+                min-width: 80px;
+            }
+            
+            .timezone-container {
+                justify-content: center;
+            }
+            
+            .timezone-card {
+                min-width: 120px;
+                padding: 12px 15px;
+            }
         }
         
         /* Sparkle effect around the event card */
