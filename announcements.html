@@ -464,11 +464,104 @@
             }
         }
         
-        footer {
-            text-align: center;
-            margin-top: 100px;
-            padding: 20px;
-            color: #AAA;
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 42px;
+            }
+            
+            .nav-buttons {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            
+            .nav-button {
+                padding: 12px 20px;
+                font-size: 16px;
+                flex: 1;
+                min-width: 120px;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .announcements-title {
+                font-size: 30px;
+            }
+            
+            .empty-announcements {
+                padding: 60px 30px;
+            }
+            
+            .empty-message {
+                font-size: 24px;
+            }
+            
+            .megaphone-icon {
+                font-size: 60px;
+            }
+            
+            .animated-letter {
+                animation: none;
+                display: inline;
+            }
+            
+            .orbiting-circle {
+                width: 15px;
+                height: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 36px;
+            }
+            
+            header p {
+                font-size: 16px;
+            }
+            
+            .content {
+                padding: 25px 15px;
+                margin-top: 40px;
+            }
+            
+            .nav-button {
+                padding: 10px 15px;
+                font-size: 14px;
+                min-width: 100px;
+            }
+            
+            .announcements-title {
+                font-size: 26px;
+            }
+            
+            .empty-announcements {
+                padding: 40px 20px;
+            }
+            
+            .empty-message {
+                font-size: 20px;
+            }
+            
+            .stay-tuned {
+                font-size: 16px;
+            }
+            
+            .megaphone-icon {
+                font-size: 50px;
+                margin-bottom: 20px;
+            }
+            
+            .notification-bell {
+                font-size: 30px;
+                margin-top: 30px;
+            }
+            
+            .orbiting-circle {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -533,7 +626,7 @@
                     
                     <div class="megaphone-icon">📢</div>
                     <div class="empty-message">There are no announcements here for now</div>
-                    <div class="stay-tuned">This will be used soon.</div>
+                    <div class="stay-tuned">Stay tuned for exciting updates coming soon!</div>
                     <div class="notification-bell">🔔</div>
                 </div>
             </div>
